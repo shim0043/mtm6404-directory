@@ -1,9 +1,9 @@
 //2
 function list (clients) {
     return clients.map(clients => `
-    <li class="list-group-item d-flex justify-content-between" data-index="${clients.index}
+    <li class="list-group-item d-flex justify-content-between" data-index="${clients.index}">
         ${clients.name}
-        <strong>${clients.balance}</strong>
+        <strong>$ ${clients.balance}</strong>
     </li>`).join('');
 }
 
@@ -28,11 +28,11 @@ function total (clients) {
 }
 
 //5
-function info (clients, index) {
+function info (index) {
     return clients.find((client) => client.index === index)
 }
 
 //6
-function search (clients) {
-    return clients.filter()
+function search (query) {
+    return clients.filter((client) => client.name.toLowerCase().includes(query.toLowerCase()))
 }
